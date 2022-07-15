@@ -1,0 +1,97 @@
+@model IEnumerable<HerbalApothecary.Models.Herb>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contraindications)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SideEffects)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tincture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Powder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Decoction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Energy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Safety)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contraindications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SideEffects)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tincture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Powder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Decoction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Energy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Safety)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HerbId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HerbId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HerbId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
